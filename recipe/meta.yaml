@@ -1,4 +1,4 @@
-{% set version = '1.1.0' %}
+{% set version = "1.2.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/httpcache_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/httpcache/httpcache_{{ version }}.tar.gz
-  sha256: 690a5f9dd4871c3093b66198694aa14e6406f057a5c0a0afde6f492165600d86
+  sha256: 798c004f59826d1c2da16c58a212dc1facf225c29cc2d4a21e54053052a0da08
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -40,16 +40,11 @@ test:
 about:
   home: http://enpiar.com/r/httpcache, https://github.com/nealrichardson/httpcache
   license: MIT
-  summary: In order to improve performance for HTTP API clients, 'httpcache' provides simple
-    tools for caching and invalidating cache. It includes the HTTP verb functions GET,
-    PUT, PATCH, POST, and DELETE, which are drop-in replacements for those in the 'httr'
-    package. These functions are cache-aware and provide default settings for cache
-    invalidation suitable for RESTful APIs; the package also enables custom cache-management
-    strategies. Finally, 'httpcache' includes a basic logging framework to facilitate
-    the measurement of HTTP request time and cache performance.
+  summary: In order to improve performance for HTTP API clients, 'httpcache' provides simple tools for caching and invalidating cache. It includes the HTTP verb functions GET, PUT, PATCH, POST, and DELETE, which are drop-in replacements for those in the 'httr' package. These functions are cache-aware and provide default
+    settings for cache invalidation suitable for RESTful APIs; the package also enables custom cache-management strategies. Finally, 'httpcache' includes a basic logging framework to facilitate the measurement of HTTP request time and cache performance.
   license_family: MIT
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
     - LICENSE
 
 extra:
