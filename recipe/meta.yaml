@@ -1,6 +1,5 @@
 {% set version = "1.2.0" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-httpcache
@@ -13,8 +12,7 @@ source:
   sha256: 798c004f59826d1c2da16c58a212dc1facf225c29cc2d4a21e54053052a0da08
 
 build:
-  merge_build_host: true  # [win]
-  number: 2
+  number: 3
   noarch: generic
   rpaths:
     - lib/R/lib/
